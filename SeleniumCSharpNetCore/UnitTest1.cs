@@ -56,9 +56,7 @@ namespace SeleniumCSharpNetCore
         [Test]
         public void Test2()
         {
-            Driver.Navigate().GoToUrl("https://politrip.com/account/sign-up");
-            Driver.Manage().Window.Maximize();
-
+           
             var acceptCookieButton = Driver.FindElement(By.Id("cookiescript_accept"));
             var firstNameField = Driver.FindElement(By.Id("first-name"));
             var lastNameField = Driver.FindElement(By.Id("last-name"));
@@ -90,9 +88,7 @@ namespace SeleniumCSharpNetCore
         [Test]
         public void Test3()
         {
-            Driver.Navigate().GoToUrl("https://politrip.com/account/sign-up");
-            Driver.Manage().Window.Maximize();
-
+            
             var acceptCookieButton = Driver.FindElement(By.Id("cookiescript_accept"));
             var firstNameField = Driver.FindElement(By.Id("first-name"));
             var lastNameField = Driver.FindElement(By.Id("last-name"));
