@@ -38,7 +38,7 @@ namespace SeleniumCSharpNetCore
             acceptCookieButton.Click();
             firstNameField.SendKeys("Samuel");
             lastNameField.SendKeys("Ciobanu");
-            emailField.SendKeys("valid.email4@gmail.com");
+            emailField.SendKeys("valid.email6@gmail.com");
             passwordField.SendKeys("Validpassword1");
             passwordConfirmField.SendKeys("Validpassword1");
             select.SelectByText("Social networks");
@@ -57,22 +57,30 @@ namespace SeleniumCSharpNetCore
         public void Test2()
         {
             Driver.Navigate().GoToUrl("https://politrip.com/account/sign-up");
+            Driver.Manage().Window.Maximize();
 
-            Driver.FindElement(By.Id("first-name")).SendKeys("Samuel");
-            Driver.FindElement(By.Id("last-name")).SendKeys("Ciobanu");
-            Driver.FindElement(By.Id("email")).SendKeys("invalid.emailinvalid.com");
-            Driver.FindElement(By.Id("sign-up-password-input")).SendKeys("Validpassword1");
-            Driver.FindElement(By.Id("sign-up-confirm-password-input")).SendKeys("Validpassword1");
-
+            var acceptCookieButton = Driver.FindElement(By.Id("cookiescript_accept"));
+            var firstNameField = Driver.FindElement(By.Id("first-name"));
+            var lastNameField = Driver.FindElement(By.Id("last-name"));
+            var emailField = Driver.FindElement(By.Id("email"));
+            var passwordField = Driver.FindElement(By.Id("sign-up-password-input"));
+            var passwordConfirmField = Driver.FindElement(By.Id("sign-up-confirm-password-input"));
             var ddown = Driver.FindElement(By.Id("sign-up-heard-input"));
             var select = new SelectElement(ddown);
+            var loaderButton = Driver.FindElement(By.Id(" qa_loader-button"));
 
-            select.SelectByText("From a friend");
+            acceptCookieButton.Click();
+            firstNameField.SendKeys("Samuel");
+            lastNameField.SendKeys("Ciobanu");
+            emailField.SendKeys("invalid.emailinvalid.com");
+            passwordField.SendKeys("Validpassword1");
+            passwordConfirmField.SendKeys("Validpassword1");
+            select.SelectByText("Web-Search");
+            loaderButton.Click();
 
-            Driver.FindElement(By.Id(" qa_loader-button")).Click();
             Driver.Quit();
-            Console.WriteLine("Test2");
-            Assert.Pass();
+            
+            
 
 
 
@@ -83,23 +91,31 @@ namespace SeleniumCSharpNetCore
         public void Test3()
         {
             Driver.Navigate().GoToUrl("https://politrip.com/account/sign-up");
+            Driver.Manage().Window.Maximize();
 
-            Driver.FindElement(By.Id("first-name")).SendKeys("Samuel");
-            Driver.FindElement(By.Id("last-name")).SendKeys("Ciobanu");
-            Driver.FindElement(By.Id("email")).SendKeys("valid.email@gmail.com");
-            Driver.FindElement(By.Id("sign-up-password-input")).SendKeys("invalidpassword");
-            Driver.FindElement(By.Id("sign-up-confirm-password-input")).SendKeys("invalidpassword");
-
+            var acceptCookieButton = Driver.FindElement(By.Id("cookiescript_accept"));
+            var firstNameField = Driver.FindElement(By.Id("first-name"));
+            var lastNameField = Driver.FindElement(By.Id("last-name"));
+            var emailField = Driver.FindElement(By.Id("email"));
+            var passwordField = Driver.FindElement(By.Id("sign-up-password-input"));
+            var passwordConfirmField = Driver.FindElement(By.Id("sign-up-confirm-password-input"));
             var ddown = Driver.FindElement(By.Id("sign-up-heard-input"));
             var select = new SelectElement(ddown);
+            var loaderButton = Driver.FindElement(By.Id(" qa_loader-button"));
 
-            select.SelectByText("Web-Search");
 
-            Driver.FindElement(By.Id(" qa_loader-button")).Click();
+            acceptCookieButton.Click();
+            firstNameField.SendKeys("Samuel");
+            lastNameField.SendKeys("Ciobanu");
+            emailField.SendKeys("valid.email@gmail.com");
+            passwordField.SendKeys("invalidpassword");
+            passwordConfirmField.SendKeys("invalidpassword");
+            select.SelectByText("From a friend");
+            loaderButton.Click();
 
             Driver.Quit();
-            Console.WriteLine("Test3");
-            Assert.Pass();
+            
+            
         }
 
 
